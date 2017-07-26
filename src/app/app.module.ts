@@ -20,6 +20,8 @@ import { StatisticsPage } from '../pages/statistics/statistics';
 import { EmployeesProvider } from '../providers/employees/employees';
 import { ApiProvidersModule } from '../modules/api/api-providers.module';
 import { Deeplinks } from '@ionic-native/deeplinks';
+import { CalendarModule } from "ap-angular2-fullcalendar";
+import { ScheduleComponent } from '../components/schedule/schedule';
 
 @NgModule({
   declarations: [
@@ -36,11 +38,13 @@ import { Deeplinks } from '@ionic-native/deeplinks';
     SigninPage,
     SignupPage,
     StatisticsPage,
+    ScheduleComponent,
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
     ApiProvidersModule.forRoot(),
+    CalendarModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
