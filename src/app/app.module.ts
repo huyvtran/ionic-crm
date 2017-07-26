@@ -19,6 +19,7 @@ import { SignupPage } from '../pages/signup/signup';
 import { StatisticsPage } from '../pages/statistics/statistics';
 import { EmployeesProvider } from '../providers/employees/employees';
 import { ApiProvidersModule } from '../modules/api/api-providers.module';
+import { Deeplinks } from '@ionic-native/deeplinks';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import { ApiProvidersModule } from '../modules/api/api-providers.module';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    EmployeesProvider
+    EmployeesProvider,
+    Deeplinks,
   ]
 })
 export class AppModule {}
