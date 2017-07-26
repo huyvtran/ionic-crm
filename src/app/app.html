@@ -1,1 +1,34 @@
-<ion-nav [root]="rootPage"></ion-nav>
+<ion-split-pane>
+
+  <!--  our side menu  -->
+  <ion-menu [content]="content">
+
+    <ion-header>
+      <ion-navbar>
+        <ion-title text-center>
+          AWIX
+        </ion-title>
+      </ion-navbar>
+    </ion-header>
+
+    <ion-content>
+      <ion-list radio-group>
+        <ion-item
+          class="menu-item"
+          menuClose
+          detail-none
+          *ngFor="let item of menuItems"
+          (click)="goToPage(item.page)">
+          <ion-icon name="{{item.icon}}" item-start color="dark"></ion-icon>
+          <ion-label>{{item.title}}</ion-label>
+          <ion-note item-end></ion-note>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+
+  </ion-menu>
+
+  <!-- the main content -->
+  <ion-nav #content [root]="rootPage" main></ion-nav>
+
+</ion-split-pane>
